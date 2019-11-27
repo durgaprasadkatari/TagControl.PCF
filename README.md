@@ -9,3 +9,6 @@ Download the solution and import into your Dynamics CRM environment.
 
 1. Click on change properties of the Single Line of Text field, navigate to Controls tab and then add the TagControl as shown in the below image.
 ![](Tags/Other/Form_Config.PNG)
+
+2. It will convert your text field into beautiful multiple tags control.
+![](Tags/Other/Form_TagControl.PNG)
