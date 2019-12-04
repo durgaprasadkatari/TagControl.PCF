@@ -53,7 +53,6 @@ export class Tags implements ComponentFramework.StandardControl<IInputs, IOutput
 	 * @param container If a control is marked control-type='standard', it will receive an empty div element within which it can render its content.
 	 */
     public init(context: ComponentFramework.Context<IInputs>, notifyOutputChanged: () => void, state: ComponentFramework.Dictionary, container: HTMLDivElement) {
-        debugger;
         // Init local variables
         this.localContext = context;
         this.localNotifyOutputChanged = notifyOutputChanged;
@@ -83,12 +82,11 @@ export class Tags implements ComponentFramework.StandardControl<IInputs, IOutput
 
         // @ts-ignore 
         var crmTagStringsAttributeValue = Xrm.Page.getAttribute(crmTagStringsAttribute).getValue();
+        this.DivElement = document.createElement("div");
+        //this.DivElement.setAttribute("contentEditable", "true");
+        this.DivElement.addEventListener("blur", this.onChangeDivElement);
         if (crmTagStringsAttributeValue != null) {
             var data = crmTagStringsAttributeValue.split(",");
-            this.DivElement = document.createElement("div");
-            //this.DivElement.setAttribute("contentEditable", "true");
-            this.DivElement.addEventListener("blur", this.onChangeDivElement);
-
             for (var i in data) {
                 // Create controls
                 // Tag element
@@ -109,17 +107,16 @@ export class Tags implements ComponentFramework.StandardControl<IInputs, IOutput
                 this.spaceElement.innerHTML = "  ";
                 this.DivElement.appendChild(this.spaceElement);
             }
-
-            this.plusIcon = document.createElement("i");
-            this.plusIcon.setAttribute("class", "plusButton");
-            this.plusIcon.setAttribute("contenteditable", "false");
-            this.plusIcon.addEventListener("click", this.plusClickEvent);
-            this.DivElement.appendChild(this.plusIcon);
-            this.localContainer.appendChild(this.DivElement);
         }
+
+        this.plusIcon = document.createElement("i");
+        this.plusIcon.setAttribute("class", "plusButton");
+        this.plusIcon.setAttribute("contenteditable", "false");
+        this.plusIcon.addEventListener("click", this.plusClickEvent);
+        this.DivElement.appendChild(this.plusIcon);
+        this.localContainer.appendChild(this.DivElement);
     }
     public divChanged(evt: Event): void {
-        debugger;
         var divString = "";
         var spanElements = this.DivElement.getElementsByClassName("badge-primary");
         for (let i = 0; i < spanElements.length; i++) {
@@ -143,7 +140,6 @@ export class Tags implements ComponentFramework.StandardControl<IInputs, IOutput
     }
 
     public closeButtonClicked(evt: Event): void {
-        debugger;
         var currentSpan = evt.target as HTMLElement;
         var parentHTMLNode = <HTMLElement>currentSpan.parentElement;
         if (currentSpan != null) {
@@ -153,7 +149,6 @@ export class Tags implements ComponentFramework.StandardControl<IInputs, IOutput
     }
 
     public plusButtonClicked(evt: Event): void {
-        debugger;
         this.textInput = document.createElement("input");
         this.textInput.setAttribute("type", "text");
         this.textInput.addEventListener("blur", this.textBoxBlurEvent);
@@ -161,7 +156,6 @@ export class Tags implements ComponentFramework.StandardControl<IInputs, IOutput
     }
 
     public textBoxBlurEventFired(evt: Event): void {
-        debugger;
         var newTagText = (<HTMLInputElement>evt.target).value;
         this.tagsElement = document.createElement("span");
         this.tagsElement.setAttribute("class", "badge badge-pill badge-primary");
@@ -187,7 +181,6 @@ export class Tags implements ComponentFramework.StandardControl<IInputs, IOutput
 	 * @param context The entire property bag available to control via Context Object; It contains values as set up by the customizer mapped to names defined in the manifest, as well as utility functions
 	 */
     public updateView(context: ComponentFramework.Context<IInputs>): void {
-        debugger;
         // Add code to update control view
 
         // @ts-ignore 
