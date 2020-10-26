@@ -1,5 +1,5 @@
 # Multiple Tag PCF Control 
-Converts single of text or text area fields to Tag control. You can add or remove the tags.
+Converts single of text or text area fields to Tag control. You can add or remove the tags. Optionally you can make the tags non editable.
 Download the solution and import into your Dynamics CRM environment.
 
 
