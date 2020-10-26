@@ -79,42 +79,70 @@ export class Tags implements ComponentFramework.StandardControl<IInputs, IOutput
         // CRM attributes bound to the control properties. 
         // @ts-ignore 
         var crmTagStringsAttribute = context.parameters.Tags.attributes.LogicalName;
-
+        var _readonlySelection = context.parameters.ReadOnly.raw || "False";
+        var readonlySelection = (_readonlySelection == "True") ? true : false;
         // @ts-ignore 
         var crmTagStringsAttributeValue = Xrm.Page.getAttribute(crmTagStringsAttribute).getValue();
         this.DivElement = document.createElement("div");
-        //this.DivElement.setAttribute("contentEditable", "true");
-        this.DivElement.addEventListener("blur", this.onChangeDivElement);
-        if (crmTagStringsAttributeValue != null) {
-            var data = crmTagStringsAttributeValue.split(",");
-            for (var i in data) {
-                // Create controls
-                // Tag element
-                this.tagsElement = document.createElement("span");
-                this.tagsElement.setAttribute("class", "badge badge-pill badge-primary");
-                this.tagsElement.innerHTML = data[i];
-                this.hiddenSpan = document.createElement("span");
-                this.hiddenSpan.setAttribute("aria-hidden", "true");
-                this.hiddenSpan.setAttribute("class", "close");
-                this.hiddenSpan.setAttribute("contenteditable", "false");
-                this.hiddenSpan.innerHTML = "&nbsp;&times;";
-                this.hiddenSpan.addEventListener("click", this.closeClicked);
-                this.tagsElement.appendChild(this.hiddenSpan);
-                this.DivElement.appendChild(this.tagsElement);
-
-                // Space element
-                this.spaceElement = document.createElement("span");
-                this.spaceElement.innerHTML = "  ";
-                this.DivElement.appendChild(this.spaceElement);
+        if (readonlySelection)
+        {
+            if (crmTagStringsAttributeValue != null) {
+                var data = crmTagStringsAttributeValue.split(",");
+                for (var i in data) {
+                    // Create controls
+                    // Tag element
+                    this.tagsElement = document.createElement("span");
+                    this.tagsElement.setAttribute("class", "badge badge-pill badge-primary");
+                    this.tagsElement.innerHTML = data[i];
+                    this.hiddenSpan = document.createElement("span");
+                    this.hiddenSpan.setAttribute("aria-hidden", "true");
+                    this.hiddenSpan.setAttribute("class", "close");
+                    this.hiddenSpan.setAttribute("contenteditable", "false");
+                    this.tagsElement.appendChild(this.hiddenSpan);
+                    this.DivElement.appendChild(this.tagsElement);
+    
+                    // Space element
+                    this.spaceElement = document.createElement("span");
+                    this.spaceElement.innerHTML = "  ";
+                    this.DivElement.appendChild(this.spaceElement);
+                }
             }
         }
+        else
+        {
+            //this.DivElement.setAttribute("contentEditable", "true");
+            this.DivElement.addEventListener("blur", this.onChangeDivElement);
+            if (crmTagStringsAttributeValue != null) {
+                var data = crmTagStringsAttributeValue.split(",");
+                for (var i in data) {
+                    // Create controls
+                    // Tag element
+                    this.tagsElement = document.createElement("span");
+                    this.tagsElement.setAttribute("class", "badge badge-pill badge-primary");
+                    this.tagsElement.innerHTML = data[i];
+                    this.hiddenSpan = document.createElement("span");
+                    this.hiddenSpan.setAttribute("aria-hidden", "true");
+                    this.hiddenSpan.setAttribute("class", "close");
+                    this.hiddenSpan.setAttribute("contenteditable", "false");
+                    this.hiddenSpan.innerHTML = "&nbsp;&times;";
+                    this.hiddenSpan.addEventListener("click", this.closeClicked);
+                    this.tagsElement.appendChild(this.hiddenSpan);
+                    this.DivElement.appendChild(this.tagsElement);
 
-        this.plusIcon = document.createElement("i");
-        this.plusIcon.setAttribute("class", "plusButton");
-        this.plusIcon.setAttribute("contenteditable", "false");
-        this.plusIcon.addEventListener("click", this.plusClickEvent);
-        this.DivElement.appendChild(this.plusIcon);
-        this.localContainer.appendChild(this.DivElement);
+                    // Space element
+                    this.spaceElement = document.createElement("span");
+                    this.spaceElement.innerHTML = "  ";
+                    this.DivElement.appendChild(this.spaceElement);
+                }
+            }
+
+            this.plusIcon = document.createElement("i");
+            this.plusIcon.setAttribute("class", "plusButton");
+            this.plusIcon.setAttribute("contenteditable", "false");
+            this.plusIcon.addEventListener("click", this.plusClickEvent);
+            this.DivElement.appendChild(this.plusIcon);
+            this.localContainer.appendChild(this.DivElement);
+        }
     }
     public divChanged(evt: Event): void {
         var divString = "";
@@ -189,7 +217,8 @@ export class Tags implements ComponentFramework.StandardControl<IInputs, IOutput
         // CRM attributes bound to the control properties. 
         // @ts-ignore 
         var crmTagStringsAttribute = this.localContext != null && this.localContext.parameters != null ? this.localContext.parameters.Tags.attributes.LogicalName : null;
-
+        var _readonlySelection = context.parameters.ReadOnly.raw || "False";
+        var readonlySelection = (_readonlySelection == "True") ? true : false;
         // @ts-ignore 
         var crmTagStringsAttributeValue = crmTagStringsAttribute != null ? Xrm.Page.getAttribute(crmTagStringsAttribute).getValue() : "red,green,blue";
 
@@ -198,41 +227,68 @@ export class Tags implements ComponentFramework.StandardControl<IInputs, IOutput
         var loopLength = tagCollection.length;
         this.DivElement.innerHTML = "&nbsp;";
 
-        if (crmTagStringsAttributeValue != null) {
-            var data = crmTagStringsAttributeValue.split(",");
-            // Add new tags
-            for (var i in data) {
-                if (data[i] != "" && data[i] != "  " && data[i] != null) {
-                    // Create controls
-                    // Tag element
-                    this.tagsElement = document.createElement("span");
-                    this.tagsElement.setAttribute("class", "badge badge-pill badge-primary");
-                    this.tagsElement.innerHTML = data[i];
-                    this.hiddenSpan = document.createElement("span");
-                    this.hiddenSpan.setAttribute("aria-hidden", "true");
-                    this.hiddenSpan.setAttribute("class", "close");
-                    this.hiddenSpan.setAttribute("contenteditable", "false");
-                    this.hiddenSpan.innerHTML = "&nbsp;&times;";
-                    this.hiddenSpan.addEventListener("click", this.closeClicked);
-                    this.tagsElement.appendChild(this.hiddenSpan);
-                    this.DivElement.appendChild(this.tagsElement);
-
-
-                    // Space element
-                    this.spaceElement = document.createElement("span");
-                    this.spaceElement.innerHTML = "  ";
-                    this.DivElement.appendChild(this.spaceElement);
+        if (readonlySelection)
+        {
+            if (crmTagStringsAttributeValue != null) {
+                var data = crmTagStringsAttributeValue.split(",");
+                // Add new tags
+                for (var i in data) {
+                    if (data[i] != "" && data[i] != "  " && data[i] != null) {
+                        this.tagsElement = document.createElement("span");
+                        this.tagsElement.setAttribute("class", "badge badge-pill badge-primary");
+                        this.tagsElement.innerHTML = data[i];
+                        this.hiddenSpan = document.createElement("span");
+                        this.hiddenSpan.setAttribute("aria-hidden", "true");
+                        this.hiddenSpan.setAttribute("class", "close");
+                        this.hiddenSpan.setAttribute("contenteditable", "false");
+                        this.tagsElement.appendChild(this.hiddenSpan);
+                        this.DivElement.appendChild(this.tagsElement);
+                        // Space element
+                        this.spaceElement = document.createElement("span");
+                        this.spaceElement.innerHTML = "  ";
+                        this.DivElement.appendChild(this.spaceElement);
+                    }
                 }
             }
-            
-            //this.localContainer.appendChild(this.DivElement);
         }
-
-        this.plusIcon = document.createElement("i");
-        this.plusIcon.setAttribute("class", "plusButton");
-        this.plusIcon.setAttribute("contenteditable", "false");
-        this.plusIcon.addEventListener("click", this.plusClickEvent);
-        this.DivElement.appendChild(this.plusIcon);
+        else
+        {
+            if (crmTagStringsAttributeValue != null) {
+                var data = crmTagStringsAttributeValue.split(",");
+                // Add new tags
+                for (var i in data) {
+                    if (data[i] != "" && data[i] != "  " && data[i] != null) {
+                        // Create controls
+                        // Tag element
+                        this.tagsElement = document.createElement("span");
+                        this.tagsElement.setAttribute("class", "badge badge-pill badge-primary");
+                        this.tagsElement.innerHTML = data[i];
+                        this.hiddenSpan = document.createElement("span");
+                        this.hiddenSpan.setAttribute("aria-hidden", "true");
+                        this.hiddenSpan.setAttribute("class", "close");
+                        this.hiddenSpan.setAttribute("contenteditable", "false");
+                        this.hiddenSpan.innerHTML = "&nbsp;&times;";
+                        this.hiddenSpan.addEventListener("click", this.closeClicked);
+                        this.tagsElement.appendChild(this.hiddenSpan);
+                        this.DivElement.appendChild(this.tagsElement);
+    
+    
+                        // Space element
+                        this.spaceElement = document.createElement("span");
+                        this.spaceElement.innerHTML = "  ";
+                        this.DivElement.appendChild(this.spaceElement);
+                    }
+                }
+                
+                //this.localContainer.appendChild(this.DivElement);
+            }
+    
+            this.plusIcon = document.createElement("i");
+            this.plusIcon.setAttribute("class", "plusButton");
+            this.plusIcon.setAttribute("contenteditable", "false");
+            this.plusIcon.addEventListener("click", this.plusClickEvent);
+            this.DivElement.appendChild(this.plusIcon);
+        }
     }
 
 	/** 
