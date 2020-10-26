@@ -7,6 +7,10 @@
       <type>SingleLine.TextArea</type>
     </type-group>
     <property name="Tags" display-name-key="Tags" description-key="Tags" of-type-group="forTags" usage="bound" required="true" />
+    <property name="ReadOnly" display-name-key="Read-Only" description-key="to make non editable the tags" of-type="Enum" usage="input" required="false">
+      <value name="true" display-name-key="True" description-key="true">True</value>
+      <value name="false" display-name-key="False" description-key="false">False</value>
+    </property>
     <!-- 
       Property node's of-type attribute can be of-type-group attribute. 
       Example:
