@@ -1,10 +1,11 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <manifest>
-  <control namespace="DKControls" constructor="Tags" version="0.0.27" display-name-key="DKControls.Tags" description-key="Takes your comma separated string and converts it into Tags" control-type="standard">
+  <control namespace="DKControls" constructor="Tags" version="0.0.30" display-name-key="DKControls.Tags" description-key="Takes your comma separated string and converts it into Tags" control-type="standard">
     <!-- property node identifies a specific, configurable piece of data that the control expects from CDS -->
     <type-group name="forTags">
       <type>SingleLine.Text</type>
       <type>SingleLine.TextArea</type>
+	  <type>Multiple</type>
     </type-group>
     <property name="Tags" display-name-key="Tags" description-key="Tags" of-type-group="forTags" usage="bound" required="true" />
     <property name="ReadOnly" display-name-key="Read-Only" description-key="to make non editable the tags" of-type="Enum" usage="input" required="false">
@@ -23,7 +24,7 @@
       <property name="sampleProperty" display-name-key="Property_Display_Key" description-key="Property_Desc_Key" of-type-group="numbers" usage="bound" required="true" />
     -->
     <resources>
-      <code path="index.ts" order="1"/>
+      <code path="index.ts" order="1" />
       <css path="css/index.css" order="1" />
       <img path="icon.png" />
       <!-- UNCOMMENT TO ADD MORE RESOURCES

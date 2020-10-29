@@ -1,0 +1,57 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\dkatari\\source\\repos\\TagControl.PCF\\Tags\\Tags.cdsproj": {}
+  },
+  "projects": {
+    "C:\\Users\\dkatari\\source\\repos\\TagControl.PCF\\Tags\\Tags.cdsproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\dkatari\\source\\repos\\TagControl.PCF\\Tags\\Tags.cdsproj",
+        "projectName": "Tags",
+        "projectPath": "C:\\Users\\dkatari\\source\\repos\\TagControl.PCF\\Tags\\Tags.cdsproj",
+        "packagesPath": "C:\\Users\\dkatari\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\dkatari\\source\\repos\\TagControl.PCF\\Tags\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\dkatari\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net462"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://pkgs.dev.azure.com/nottinghill/_packaging/core/nuget/v3/index.json": {}
+        },
+        "frameworks": {
+          "net462": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net462": {
+          "dependencies": {
+            "Microsoft.PowerApps.MSBuild.Solution": {
+              "target": "Package",
+              "version": "[1.*, )"
+            }
+          }
+        }
+      },
+      "runtimes": {
+        "win": {
+          "#import": []
+        },
+        "win-x64": {
+          "#import": []
+        },
+        "win-x86": {
+          "#import": []
+        }
+      }
+    }
+  }
+}

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Durgaprasad\\Projects\\PowerAppCustomControl\\Tags\\deployment\\deployment.cdsproj": {}
+    "C:\\Users\\dkatari\\source\\repos\\TagControl.PCF\\Tags\\deployment\\deployment.cdsproj": {}
   },
   "projects": {
-    "C:\\Durgaprasad\\Projects\\PowerAppCustomControl\\PowerAppCustomControl.pcfproj": {
+    "C:\\Users\\dkatari\\source\\repos\\TagControl.PCF\\PowerAppCustomControl.pcfproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Durgaprasad\\Projects\\PowerAppCustomControl\\PowerAppCustomControl.pcfproj",
+        "projectUniqueName": "C:\\Users\\dkatari\\source\\repos\\TagControl.PCF\\PowerAppCustomControl.pcfproj",
         "projectName": "PowerAppCustomControl",
-        "projectPath": "C:\\Durgaprasad\\Projects\\PowerAppCustomControl\\PowerAppCustomControl.pcfproj",
+        "projectPath": "C:\\Users\\dkatari\\source\\repos\\TagControl.PCF\\PowerAppCustomControl.pcfproj",
         "packagesPath": "C:\\Users\\dkatari\\.nuget\\packages\\",
-        "outputPath": "C:\\Durgaprasad\\Projects\\PowerAppCustomControl\\obj\\",
+        "outputPath": "C:\\Users\\dkatari\\source\\repos\\TagControl.PCF\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\dkatari\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -22,7 +22,8 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {},
+          "https://pkgs.dev.azure.com/nottinghill/_packaging/core/nuget/v3/index.json": {}
         },
         "frameworks": {
           "net462": {
@@ -52,14 +53,14 @@
         }
       }
     },
-    "C:\\Durgaprasad\\Projects\\PowerAppCustomControl\\Tags\\deployment\\deployment.cdsproj": {
+    "C:\\Users\\dkatari\\source\\repos\\TagControl.PCF\\Tags\\deployment\\deployment.cdsproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Durgaprasad\\Projects\\PowerAppCustomControl\\Tags\\deployment\\deployment.cdsproj",
+        "projectUniqueName": "C:\\Users\\dkatari\\source\\repos\\TagControl.PCF\\Tags\\deployment\\deployment.cdsproj",
         "projectName": "deployment",
-        "projectPath": "C:\\Durgaprasad\\Projects\\PowerAppCustomControl\\Tags\\deployment\\deployment.cdsproj",
+        "projectPath": "C:\\Users\\dkatari\\source\\repos\\TagControl.PCF\\Tags\\deployment\\deployment.cdsproj",
         "packagesPath": "C:\\Users\\dkatari\\.nuget\\packages\\",
-        "outputPath": "C:\\Durgaprasad\\Projects\\PowerAppCustomControl\\Tags\\deployment\\obj\\",
+        "outputPath": "C:\\Users\\dkatari\\source\\repos\\TagControl.PCF\\Tags\\deployment\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\dkatari\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -70,13 +71,14 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {},
+          "https://pkgs.dev.azure.com/nottinghill/_packaging/core/nuget/v3/index.json": {}
         },
         "frameworks": {
           "net462": {
             "projectReferences": {
-              "C:\\Durgaprasad\\Projects\\PowerAppCustomControl\\PowerAppCustomControl.pcfproj": {
-                "projectPath": "C:\\Durgaprasad\\Projects\\PowerAppCustomControl\\PowerAppCustomControl.pcfproj"
+              "C:\\Users\\dkatari\\source\\repos\\TagControl.PCF\\PowerAppCustomControl.pcfproj": {
+                "projectPath": "C:\\Users\\dkatari\\source\\repos\\TagControl.PCF\\PowerAppCustomControl.pcfproj"
               }
             }
           }

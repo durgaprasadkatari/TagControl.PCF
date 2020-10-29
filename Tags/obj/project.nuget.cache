@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "3n2zndqyw5OBEyY8mnRSnFl4TnpQmZUTRCiVa1GoNmjyfrlp2O/Vxe/XgfcCCdeKGVbjqznoGj5xUDV5gv7XSQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\dkatari\\source\\repos\\TagControl.PCF\\Tags\\Tags.cdsproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\dkatari\\.nuget\\packages\\microsoft.powerapps.msbuild.solution\\1.3.6\\microsoft.powerapps.msbuild.solution.1.3.6.nupkg.sha512"
+  ],
+  "logs": []
+}

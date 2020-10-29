@@ -1,0 +1,18 @@
+2020-10-28 15:02:52.107 - Info	
+Packing C:\Users\dkatari\source\repos\TagControl.PCF\Tags\obj\Debug\Metadata to bin\Debug\Tags.zip
+
+2020-10-28 15:02:52.144 - Info	Processing Component: Entities
+2020-10-28 15:02:52.149 - Info	Processing Component: Roles
+2020-10-28 15:02:52.153 - Info	Processing Component: Workflows
+2020-10-28 15:02:52.154 - Info	Processing Component: FieldSecurityProfiles
+2020-10-28 15:02:52.154 - Info	Processing Component: Templates
+2020-10-28 15:02:52.155 - Info	Processing Component: EntityMaps
+2020-10-28 15:02:52.156 - Info	Processing Component: EntityRelationships
+2020-10-28 15:02:52.178 - Info	Processing Component: OrganizationSettings
+2020-10-28 15:02:52.179 - Info	Processing Component: optionsets
+2020-10-28 15:02:52.180 - Info	Processing Component: CustomControls
+2020-10-28 15:02:52.186 - Info	Processing Component: SolutionPluginAssemblies
+2020-10-28 15:02:52.189 - Info	Processing Component: EntityDataProviders
+2020-10-28 15:02:52.448 - Info	
+Unmanaged Pack complete.
+

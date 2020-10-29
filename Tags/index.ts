@@ -84,6 +84,7 @@ export class Tags implements ComponentFramework.StandardControl<IInputs, IOutput
         // @ts-ignore 
         var crmTagStringsAttributeValue = Xrm.Page.getAttribute(crmTagStringsAttribute).getValue();
         this.DivElement = document.createElement("div");
+        this.DivElement.addEventListener("blur", this.onChangeDivElement);
         if (readonlySelection)
         {
             if (crmTagStringsAttributeValue != null) {
@@ -106,12 +107,13 @@ export class Tags implements ComponentFramework.StandardControl<IInputs, IOutput
                     this.spaceElement.innerHTML = "  ";
                     this.DivElement.appendChild(this.spaceElement);
                 }
+
+                this.localContainer.appendChild(this.DivElement);
             }
         }
         else
         {
             //this.DivElement.setAttribute("contentEditable", "true");
-            this.DivElement.addEventListener("blur", this.onChangeDivElement);
             if (crmTagStringsAttributeValue != null) {
                 var data = crmTagStringsAttributeValue.split(",");
                 for (var i in data) {

@@ -1,0 +1,2 @@
+C:\Users\dkatari\source\repos\TagControl.PCF\Tags\obj\Debug\Tags.cdsprojAssemblyReference.cache
+C:\Users\dkatari\source\repos\TagControl.PCF\Tags\obj\Debug\Tags.cdsproj.CoreCompileInputs.cache

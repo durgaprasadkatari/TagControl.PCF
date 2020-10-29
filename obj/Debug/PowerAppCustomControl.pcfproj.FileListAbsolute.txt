@@ -1,0 +1,2 @@
+C:\Users\dkatari\source\repos\TagControl.PCF\obj\Debug\PowerAppCustomControl.pcfprojAssemblyReference.cache
+C:\Users\dkatari\source\repos\TagControl.PCF\obj\Debug\PowerAppCustomControl.pcfproj.CoreCompileInputs.cache
